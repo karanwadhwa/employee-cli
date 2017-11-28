@@ -24,7 +24,6 @@ const addEmployee = (employee) => {
 const findEmployee = (ename) => {
   // make case insensitive
   var search = new RegExp(ename, 'i');
-  console.log(`search = ${search}`);
   Employee.find({$or: [{firstname: search}, {lastname: search}]})
     .then((employee) => {
       if(employee.length === 0) {
@@ -42,9 +41,40 @@ const findEmployee = (ename) => {
     });
 }
 
+// Update Employee
+const updateEmployee = (_id, employee) => {
+  Employee.update({_id}, employee)
+    .then((employee) => {
+      console.info(`Employee Record Updated.`);
+      db.close();
+    });
+}
+
+// Remove Employee
+const removeEmployee = (_id) => {
+  Employee.remove({_id})
+    .then((employee) => {
+      console.info(`Employee Record Deleted.`);
+      db.close();
+    });
+}
+
+// List Employee
+const listEmployees = () => {
+  Employee.find()
+    .then((employees) => {
+      console.info(employees);
+      console.info(`${employees.length} Employees Listed.`);
+      db.close();
+    });
+}
+
 // Export all functions
 
 module.exports = {
   addEmployee,
-  findEmployee
+  findEmployee,
+  updateEmployee,
+  removeEmployee,
+  listEmployees
 }

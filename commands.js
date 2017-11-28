@@ -1,6 +1,12 @@
 const commander = require('commander');
 const { prompt } = require('inquirer');
-const { addEmployee, findEmployee } = require('./index.js');
+const {
+  addEmployee,
+  findEmployee,
+  updateEmployee,
+  removeEmployee,
+  listEmployees
+} = require('./index.js');
 
 // Questions Prompt for addEmployee
 const questions = [
@@ -55,7 +61,7 @@ commander
 commander
   .command('add')
   .alias('a')
-  .description('Add Employee')
+  .description('Add Employee Record')
   .action(() => {
     prompt(questions)
       .then((answers) => addEmployee(answers));
@@ -65,7 +71,32 @@ commander
 commander
   .command('find <name>')
   .alias('f')
-  .description('Find employee')
+  .description('Find Employee Record')
   .action((name) => findEmployee(name));
+
+// Update command
+commander
+  .command('update <_id>')
+  .alias('u')
+  .description('Update Employee Record')
+  .action((_id) => {
+    prompt(questions)
+      .then((answers) => updateEmployee(_id, answers));
+  });
+
+// Remove command
+commander
+  .command('remove <name>')
+  .alias('r')
+  .description('Delete Employee Record')
+  .action((_id) => removeEmployee(_id));
+
+// List command
+commander
+  .command('list')
+  .alias('l')
+  .description('List all Employee Records')
+  .action(() => listEmployees());
+
 
 commander.parse(process.argv);
