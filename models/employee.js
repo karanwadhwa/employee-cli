@@ -1,12 +1,12 @@
 const mongoose = require('moongoose');
 
 const employeeSchema = mongoose.Schema({
-  firstname:  {type: String},
-  lastname:   {type: String},
-  phone:      {type: String},
-  email:      {type: String},
-  dept:       {type: String},
-  postion:    {type: String}
+  firstname: String,
+  lastname:  String,
+  phone:     String,
+  email:     String,
+  dept:      String,
+  postion:   String
 });
 
 // Define Employee model
