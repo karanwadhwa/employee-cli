@@ -23,11 +23,16 @@ const addEmployee = (employee) => {
 // Find Employee
 const findEmployee = (ename) => {
   // make case insensitive
-  var search = ename.toLowerCase();
+  var search = new RegExp(ename, 'i');
   Employee.find({$or: [{firstname: search}, {lastname: search}]})
     .then((employee) => {
       console.info(employee);
-      console.info(`${employee.length} Matches found.`);
+      if(employee.length === 1) {
+        console.info(`1 Match found.`);
+      } else {
+        console.info(`${employee.length} Matches found.`);
+      }
+
       db.close();
     });
 }

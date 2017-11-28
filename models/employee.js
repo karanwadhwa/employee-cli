@@ -1,4 +1,4 @@
-const mongoose = require('moongoose');
+const mongoose = require('mongoose');
 
 const employeeSchema = mongoose.Schema({
   firstname: String,
@@ -6,7 +6,7 @@ const employeeSchema = mongoose.Schema({
   phone:     String,
   email:     String,
   dept:      String,
-  postion:   String
+  title:   String
 });
 
 // Define Employee model
