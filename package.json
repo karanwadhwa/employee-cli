@@ -1,0 +1,24 @@
+{
+  "name": "employee-cli",
+  "version": "1.0.0",
+  "description": "simple command line interface app for storing employee information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karanwadhwa/employee-cli.git"
+  },
+  "author": "Karan Wadhwa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karanwadhwa/employee-cli/issues"
+  },
+  "homepage": "https://github.com/karanwadhwa/employee-cli#readme",
+  "dependencies": {
+    "commander": "^2.12.2",
+    "inquirer": "^4.0.0",
+    "mongoose": "^4.13.5"
+  }
+}
