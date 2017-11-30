@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/karanwadhwa/employee-cli#readme",
   "dependencies": {
+    "cli-table": "^0.3.1",
+    "colors": "^1.1.2",
     "commander": "^2.12.2",
     "inquirer": "^4.0.0",
     "mongoose": "^4.13.5"
