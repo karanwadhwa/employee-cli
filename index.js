@@ -31,7 +31,7 @@ const findEmployee = (ename) => {
       if(employees.length === 0) {
         console.info(`No Employees with Name: ${ename}`.red);
       } else {
-        console.log('Resize console window if table is disfigured.'.inverse);
+        console.log('Resize console window if table is disfigured.'.black.bgWhite);
         var table = new Table({
           head: ['Name', 'Phone', 'Email', 'Department', 'Title', 'ID']
         , colWidths: [23, 15, 30, 20, 25, 27]
@@ -50,9 +50,9 @@ const findEmployee = (ename) => {
         console.log(table.toString());
         if(employees.length === 1) {
 
-        console.log('1 Match found.'.green);
+        console.log('1 Match found.'.cyan);
         } else {
-        console.log(`${employees.length} Matches found.`.green);
+        console.log(`${employees.length} Matches found.`.cyan);
         }
       }
       db.close();
@@ -81,7 +81,7 @@ const removeEmployee = (_id) => {
 const listEmployees = () => {
   Employee.find()
     .then((employees) => {
-      console.log('Resize console window if table is disfigured.'.inverse);
+      console.log('Resize console window if table is disfigured.'.black.bgWhite);
       var table = new Table({
         head: ['Name', 'Phone', 'Email', 'Department', 'Title', 'ID']
       , colWidths: [23, 15, 30, 20, 25, 27]
@@ -98,7 +98,7 @@ const listEmployees = () => {
         );
       }
       console.log(table.toString());
-      console.info(`${employees.length} Employees Listed.`.green);
+      console.info(`${employees.length} Employees Listed.`.cyan);
       db.close();
     });
 }
