@@ -34,7 +34,7 @@ const findEmployee = (ename) => {
         console.log('Resize console window if table is disfigured.'.black.bgWhite);
         var table = new Table({
           head: ['Name', 'Phone', 'Email', 'Department', 'Title', 'ID']
-        , colWidths: [23, 15, 30, 20, 25, 27]
+        , colWidths: [15, 15, 25, 18, 23, 27]
         });
         for(var i=0; i<employees.length; i++) {
           var id = employees[i]._id
@@ -84,7 +84,7 @@ const listEmployees = () => {
       console.log('Resize console window if table is disfigured.'.black.bgWhite);
       var table = new Table({
         head: ['Name', 'Phone', 'Email', 'Department', 'Title', 'ID']
-      , colWidths: [23, 15, 30, 20, 25, 27]
+      , colWidths: [15, 15, 25, 18, 23, 27]
       });
       for(var i=0; i<employees.length; i++) {
         var id = employees[i]._id
