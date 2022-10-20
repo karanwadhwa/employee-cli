@@ -23,6 +23,6 @@
     "colors": "^1.1.2",
     "commander": "^2.12.2",
     "inquirer": "^4.0.0",
-    "mongoose": "^4.13.5"
+    "mongoose": "^4.13.21"
   }
 }
